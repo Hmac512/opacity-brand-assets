@@ -1,0 +1,218 @@
+/* =============================================================
+   TODO (post-landing): "Opacity Serif" / "Opacity Grotesk" are
+   mislabeled. The six serif-*.woff2 files and grotesk-medium-500.woff2
+   are actually Inter subsets per the live Framer site
+   (reference-site 2/opacitylabs.framer.website/index.html lines
+   143-207, declared as "Inter" with unicode-range splits). The landing
+   page uses neither family, so this only affects
+   preview/type-serif-grotesk.html. Fix after landing is dialed in.
+   ============================================================= */
+
+/* =============================================================
+   OPACITY FONT STACK — BRAND FILES
+
+   18 .woff2 files were uploaded by the Opacity team from the original
+   Figma binary. Originally hash-named on upload; renamed to a
+   brand-alias scheme (<family>-<weight-name>-<weight#>[-italic]).
+
+   Mapping (file → original hash → inferred face):
+
+     ── Sans (Söhne family) ────────────────────────────────
+     sans-regular-400              o9mR2ck...   Test Söhne Buch
+     sans-regular-400-italic       9Vesau0...   Test Söhne Buch Italic
+     sans-medium-500               O8Ibipsq...  Test Söhne Kräftig
+     sans-medium-500-italic        6CFSrxf...   Test Söhne Kräftig Italic
+     sans-semibold-600             6xnDERlT...  Test Söhne Halbfett
+     sans-semibold-600-italic      hWCpRfp...   Test Söhne Halbfett Italic
+     sans-bold-700                 k7VEIs3...   American Grotesk Bold (or Söhne 700)
+     sans-bold-700-italic          RK4zvs1...   American Grotesk Bold Italic
+     sans-black-900                XX0pt5v...   Test Söhne Black
+     sans-black-900-italic         NbinVsdb...  Test Söhne Black Italic
+
+     ── Display grotesk (American Grotesk wide) ────────────
+     grotesk-medium-500            GrgcKwrN...  Test American Grotesk Medium
+
+     ── Pixel / bitmap mono ────────────────────────────────
+     mono-bulb-500                 HWmKPxV...   OT Bulb Monoline
+
+     ── Serif (EB Garamond per inference; actually Inter) ──
+     serif-regular-400             5vvr9Vy...   EB Garamond Regular
+     serif-medium-500              EOr0mi4...   EB Garamond Regular alt
+     serif-regular-400-italic      OYrD2tB...   EB Garamond Regular alt
+     serif-semibold-600            b6Y37Fth...  EB Garamond SemiBold
+     serif-bold-700                JeYwfua...   EB Garamond Bold
+     serif-heavy-800               Y9k9QrlZ...  EB Garamond Bold alt
+
+   These face inferences are best-effort — rendered specimens are in
+   fonts/_full-audit.png. If any weight slot looks wrong in the
+   previews, swap the src: url() line and we'll regenerate.
+   ============================================================= */
+
+
+/* =============================================================
+   Live-site family names (match reference-site 2/opacitylabs.framer
+   .website). These declare the SAME woff2 files under the literal
+   Framer names so CSS written against "Test Söhne X" /
+   "OT Bulb Monoline 500" resolves directly instead of falling through
+   to the aliases below.
+   ============================================================= */
+@font-face {
+  font-family: "Test Söhne Buch";
+  font-weight: 400; font-style: normal;
+  src: url("sans-regular-400.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Test Söhne Kräftig";
+  font-weight: 500; font-style: normal;
+  src: url("sans-medium-500.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Test Söhne Halbfett";
+  font-weight: 600; font-style: normal;
+  src: url("sans-semibold-600.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "OT Bulb Monoline 500";
+  font-weight: 500; font-style: normal;
+  src: url("mono-bulb-500.woff2") format("woff2");
+  font-display: swap;
+}
+
+
+/* ---------- Opacity Serif (EB Garamond, but currently Inter — see TODO) ---------- */
+@font-face {
+  font-family: "Opacity Serif";
+  font-weight: 400; font-style: normal;
+  src: url("serif-regular-400.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Serif";
+  font-weight: 500; font-style: normal;
+  src: url("serif-medium-500.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Serif";
+  font-weight: 600; font-style: normal;
+  src: url("serif-semibold-600.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Serif";
+  font-weight: 700; font-style: normal;
+  src: url("serif-bold-700.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Serif";
+  font-weight: 800; font-style: normal;
+  src: url("serif-heavy-800.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Serif";
+  font-weight: 400; font-style: italic;
+  src: url("serif-regular-400-italic.woff2") format("woff2");
+  font-display: swap;
+}
+
+
+/* ---------- Opacity Sans (Söhne) ---------- */
+@font-face {
+  font-family: "Opacity Sans";
+  font-weight: 400; font-style: normal;
+  src: url("sans-regular-400.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Sans";
+  font-weight: 400; font-style: italic;
+  src: url("sans-regular-400-italic.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Sans";
+  font-weight: 500; font-style: normal;
+  src: url("sans-medium-500.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Sans";
+  font-weight: 500; font-style: italic;
+  src: url("sans-medium-500-italic.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Sans";
+  font-weight: 600; font-style: normal;
+  src: url("sans-semibold-600.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Sans";
+  font-weight: 600; font-style: italic;
+  src: url("sans-semibold-600-italic.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Sans";
+  font-weight: 700; font-style: normal;
+  src: url("sans-bold-700.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Sans";
+  font-weight: 700; font-style: italic;
+  src: url("sans-bold-700-italic.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Sans";
+  font-weight: 900; font-style: normal;
+  src: url("sans-black-900.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Opacity Sans";
+  font-weight: 900; font-style: italic;
+  src: url("sans-black-900-italic.woff2") format("woff2");
+  font-display: swap;
+}
+
+
+/* ---------- Opacity Grotesk (American Grotesk display, currently Inter — see TODO) ---------- */
+@font-face {
+  font-family: "Opacity Grotesk";
+  font-weight: 500; font-style: normal;
+  src: url("grotesk-medium-500.woff2") format("woff2");
+  font-display: swap;
+}
+
+
+/* ---------- Opacity Mono (OT Bulb Monoline — pixel/bitmap mono) ---------- */
+@font-face {
+  font-family: "Opacity Mono";
+  font-weight: 500; font-style: normal;
+  src: url("mono-bulb-500.woff2") format("woff2");
+  font-display: swap;
+}
+
+
+/* =============================================================
+   Aliases — call these in colors_and_type.css and components.
+   ============================================================= */
+:root {
+  --font-sans:    "Opacity Sans", "Söhne", "Inter", system-ui, sans-serif;
+  --font-display: "Opacity Sans", "Söhne", "Inter", system-ui, sans-serif;
+  --font-serif:   "Opacity Serif", "EB Garamond", Georgia, serif;
+  --font-grotesk: "Opacity Grotesk", "American Grotesk", "Inter Tight", system-ui, sans-serif;
+  --font-mono:    "Opacity Mono", "OT Bulb Monoline", "Space Mono", ui-monospace, monospace;
+
+  /* legacy aliases used elsewhere in the system */
+  --font-body:  var(--font-sans);
+  --font-label: var(--font-mono);
+}
